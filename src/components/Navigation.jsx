@@ -7,7 +7,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center gap-2">
             <p className="font-bold text-xl tracking-tight text-slate-900">
-              ML Tuning Guide
+              EDA
             </p>
           </div>
           <nav className="flex">
