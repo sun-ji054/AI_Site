@@ -1,4 +1,5 @@
 import Navigation from "../components/Navigation";
+import Code from "../components/Code";
 import { BrushCleaning, SearchCheck, FileAxis3d } from "lucide-react";
 
 export default function EDA() {
@@ -112,12 +113,27 @@ export default function EDA() {
         className="px-5 py-3 bg-linear-to-t from-amber-100 to-lime-100 border-b border-amber-200"
       >
         <div className="max-w-5xl mx-auto my-16">
-          <h1 className="text-4xl font-black mb-14 text-right">
+          <h1 className="text-4xl font-black mb-14 text-right text-lime-900">
             EDA의 주요 단계
           </h1>
 
           {/* 구조파악 */}
-          {/* 전처리 */}
+          <div>
+            <div className="flex items-center gap-4 mb-3">
+              <p className="font-base text-amber-500">Step 1</p>
+              <div className="grow border-b border-amber-500" />
+            </div>
+            <h2 className="font-extrabold text-3xl text-amber-600 mb-4">
+              구조파악
+            </h2>
+            <p className="pl-1 text-lg font-sans text-amber-950 mb-5">
+              : 데이터 타입(숫자, 범주형), 행/열 개수 등 구조 확인
+            </p>
+            <Code />
+          </div>
+
+          {/* 기초통계 */}
+          {/* 이상치, 결측치 */}
           {/* 분포확인 */}
           {/* 관계분석 */}
         </div>
