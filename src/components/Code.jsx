@@ -1,8 +1,4 @@
-export default function () {
-  const codeString = `function helloWorld() {
-  console.log("Hello, World!");
-}`;
-
+export default function ({code, filename}) {
   return (
     <>
       <div className="bg-slate-900 rounded-xl shadow-2xl overflow-hidden">
@@ -13,13 +9,13 @@ export default function () {
             <div className="bg-green-500 w-3 h-3 rounded-full " />
           </div>
           <span className="text-xs text-slate-400 font-mono">
-            grid_search_example.py
+            {filename}
           </span>
         </div>
         <div className="p-6 overflow-x-auto">
           <pre className="text-sm text-slate-300">
-          <code className="code-box">
-            {codeString}
+          <code className="code-box whitespace-pre">
+            {code}
           </code>
         </pre>
         </div>
@@ -27,3 +23,9 @@ export default function () {
     </>
   );
 }
+
+{/*이런 식으로 씁니다
+<Code code={`df.isnull().sum()
+# Outlier detection using IQR
+Q1 = df['column'].quantile(0.25)
+Q3 = df['column'].quantile(0.75)`} filename={"data_cleaning.py"}/>*/}

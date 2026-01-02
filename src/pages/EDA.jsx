@@ -1,6 +1,6 @@
 import Navigation from "../components/Navigation";
 import Code from "../components/Code";
-import { BrushCleaning, SearchCheck, FileAxis3d } from "lucide-react";
+import { Pin, ArrowBigRight } from "lucide-react";
 
 export default function EDA() {
   return (
@@ -17,7 +17,7 @@ export default function EDA() {
             </span>
           </h1>
           <p className="text-gray-600">
-            데이터의 패턴 발견과 가설 설정을 위한 필수 과정
+            데이터의 패턴 발견과 분석을 위한 필수 과정
           </p>
         </div>
       </section>
@@ -48,9 +48,11 @@ export default function EDA() {
             <div className="px-10 py-7">
               <p className="text-xl font-bold mb-2">핵심 개념</p>
               <p>
-                수집한 데이터를 통계적 기법과 시각화 도구를 사용하여 데이터의
-                <br />
-                특징을 파악하고 잠재적인 패턴을 찾는 과정입니다.
+                벨연구소의 수학자 존 튜키가 개발한 데이터분석 방법론으로, 
+                데이터를 다양한 각도에서 관찰학 이해하는 모든 과정을 말합니다.
+                <br/><br/>
+                데이터 분석에 있어서 매우 중요한 초기 분석 단계이며,
+                데이터를 분석하고 결과를 내는 과정에 있어 지속적으로 해당 데이터에 대한 <strong>"탐색과 이해"</strong>를 기본으로 가져야 합니다.
               </p>
             </div>
           </div>
@@ -67,43 +69,38 @@ export default function EDA() {
             왜 EDA가 중요한가?
           </h1>
 
-          {/* 그리드 */}
-          <div className="grid gap-7 mb-16 md:grid-cols-3">
-            <div>
+          {/* grid */}
+          <div className="mb-16 grid grid-cols-3">
               <div className="px-7 py-5 bg-lime-100 border border-lime-300 rounded-3xl max-w-3xl hover:shadow-lg transition-shadow duration-300">
-                <BrushCleaning />
-                <h3 className="text-black text-lg font-extrabold my-3">
-                  데이터 정제
-                </h3>
-                <p className="text-balence text-gray-600">
-                  결측치(Missing Value)나 이상치(Outlier)를 발견하여 분석 결과의
-                  왜곡을 사전에 방지합니다.
-                </p>
+                <div className="flex items-center gap-3">
+                  <Pin/>
+                  <p className="text-black text-lg font-semibold my-3">데이터의 잠재적인 문제 발견</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Pin/>
+                  <p className="text-black text-lg font-semibold my-3">데이터의 다양한 패턴 발견</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Pin/>
+                  <p className="text-black text-lg font-semibold my-3">자료수집을 위한 기반 (추가 자료수집도 포함)</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Pin/>
+                  <p className="text-black text-lg font-semibold my-3">적절한 통계 도구 제시</p>
+                </div>
+              </div>
+              <div className="flex items-center justify-center">
+                <ArrowBigRight size={100} color="green"/>
+              </div>
+              <div className="px-7 py-5 flex flex-col text-left justify-center">
+                <div className="flex items-center mb-3">
+                  
+                  <p className="text-pretty font-semibold text-lg">간단히 말하자면,</p>
+                </div>
+                <p>데이터에 대한 이해와 탐색이 바탕이 되어야 문제를 발견 및 해결은 물론
+데이터 분석을 하는 과정에서 필요한 통계도구, 자료수집 등을 결정하는데도 도움을 줍니다.</p>
               </div>
             </div>
-            <div>
-              <div className="px-7 py-5 bg-amber-100 border border-amber-300 rounded-3xl max-w-3xl hover:shadow-lg transition-shadow duration-300">
-                <SearchCheck />
-                <h3 className="text-black text-lg font-extrabold my-3">
-                  가설 수정 및 도출
-                </h3>
-                <p className="text-balence text-gray-600">
-                  초기에 세운 가설이 맞는지 확인하고, 데이터 기반의 새로운
-                  가설을 도출할 수 있습니다.
-                </p>
-              </div>
-            </div>
-            <div className="px-7 py-5 bg-yellow-100 border border-yellow-300 rounded-3xl max-w-3xl hover:shadow-lg transition-shadow duration-300">
-              <FileAxis3d />
-              <h3 className="text-black text-lg font-extrabold my-3">
-                모델링 전략 수립
-              </h3>
-              <p className="text-balence text-gray-600">
-                어떤 변수가 중요한지(Feature Selection) 파악하여 분석 모델의
-                효율성을 극대화합니다.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -118,24 +115,182 @@ export default function EDA() {
           </h1>
 
           {/* 구조파악 */}
-          <div>
+          <div className="mb-16">
             <div className="flex items-center gap-4 mb-3">
               <p className="font-base text-amber-500">Step 1</p>
               <div className="grow border-b border-amber-500" />
             </div>
             <h2 className="font-extrabold text-3xl text-amber-600 mb-4">
-              구조파악
+              데이터의 전체 그림 보기
             </h2>
             <p className="pl-1 text-lg font-sans text-amber-950 mb-5">
-              : 데이터 타입(숫자, 범주형), 행/열 개수 등 구조 확인
+              가장 기본적인 표 형태로 데이터를 펼쳐본 후, 행과 열을 둘러보면서 데이터가 어떤 식으로 구성되어 있는지 확인합니다.
             </p>
-            <Code />
+            <Code code={`import pandas as pd
+import numpy as np
+
+raw_data = pd.read_csv('raw_data.csv')
+match_info = pd.read_csv('match_info.csv')
+data_description = pd.read_excel('data_description.xlsx')
+
+pd.set_option('display.max_columns', None)    #데이터 생략하지 않고 얼마나 보여줄지
+pd.set_option('display.max_rows', None)
+pd.set_option('display.width', None)
+pd.set_option('display.max_colwidth', None)
+
+raw_data.head(50)
+match_info.head(50)`} filename={"data_structure.py"}/>
           </div>
 
           {/* 기초통계 */}
+          <div className="mb-16">
+            <div className="flex items-center gap-4 mb-3">
+              <p className="font-base text-amber-500">Step 2</p>
+              <div className="grow border-b border-amber-500" />
+            </div>
+            <h2 className="font-extrabold text-3xl text-amber-600 mb-4">
+              기초통계
+            </h2>
+            <p className="pl-1 text-lg font-sans text-amber-950 mb-5">
+              데이터 타입(숫자, 범주형), 행/열 개수 등 구조 확인
+            </p>
+            <Code code={`raw_data.describe()
+raw_data.dtypes
+raw_data.shape           #(579306, 18)
+            
+match_info.describe()
+match_info.dtypes
+match_info.shape         #(198, 17)`} filename={'basic_statistics.py'}/>
+          </div>
+
           {/* 이상치, 결측치 */}
-          {/* 분포확인 */}
-          {/* 관계분석 */}
+          <div className="mb-16">
+            <div className="flex items-center gap-4 mb-3">
+              <p className="font-base text-amber-500">Step 3</p>
+              <div className="grow border-b border-amber-500" />
+            </div>
+            <h2 className="font-extrabold text-3xl text-amber-600 mb-4">
+              이상치, 결측치 찾아보기
+            </h2>
+            <p className="pl-1 text-lg font-sans text-amber-950 mb-5">
+              <strong>1) 이상치</strong><br/>
+              <strong >2) 결측치</strong><br/>
+              &nbsp;&nbsp;&nbsp;완전 무작위 결측(MCAR) : 결측치가 다른 변수들과 아무런 상관관계가 없는 경우<br/>
+              &nbsp;&nbsp;&nbsp;무작위 결측(MAR) : 특정 변수와 관련되어 누락됐지만, 변수들의 상관관계를 알 수 없는 경우<br/>
+              &nbsp;&nbsp;&nbsp;비무작위 결측(NMAR) : 누락된 변수의 값이 누락된 이유와 관련이 있는 경우<br/>  
+            </p>
+            <Code filename={'nall_outlier.py'} code={`
+# 결측치 확인
+raw_data.isnull().sum()        # plaer_id: 1, result_name: 349,604, position_name: 70,120, main_position: 1,704
+match_info.isnull().sum()      # 결측치 없음
+
+
+# 이상치 확인
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# 그래프 스타일 설정 (한글 깨짐 방지를 위해 기본 스타일 사용 또는 폰트 설정 필요)
+sns.set_theme(style="whitegrid")
+
+# 분석할 컬럼 그룹화
+coord_cols = ['start_x', 'start_y', 'end_x', 'end_y']
+diff_cols = ['dx', 'dy']
+time_cols = ['time_seconds']
+
+# --- 시각화 1: 좌표 데이터 (start/end x, y) ---
+plt.figure(figsize=(10, 6))
+sns.boxplot(data=raw_data[coord_cols])
+plt.title('Boxplot of Coordinate Columns')
+plt.ylabel('Value')
+plt.savefig('boxplot_coordinates.png')
+plt.show()
+
+# --- 시각화 2: 변위 데이터 (dx, dy) ---
+plt.figure(figsize=(10, 6))
+sns.boxplot(data=raw_data[diff_cols])
+plt.title('Boxplot of Displacement Columns (dx, dy)')
+plt.ylabel('Distance')
+plt.savefig('boxplot_displacements.png')
+plt.show()
+
+# --- 시각화 3: 시간 데이터 (time_seconds) ---
+plt.figure(figsize=(8, 6))
+sns.boxplot(data=raw_data[time_cols])
+plt.title('Boxplot of Time Seconds')
+plt.ylabel('Seconds')
+plt.savefig('boxplot_time.png')
+plt.show()
+
+# 4. 수치 기반 이상치 확인 (IQR 방식)
+def print_outlier_report(data, columns):
+    print("=== Outlier Report (IQR Method) ===")
+    for col in columns:
+        Q1 = data[col].quantile(0.25)
+        Q3 = data[col].quantile(0.75)
+        IQR = Q3 - Q1
+        lower_bound = Q1 - 1.5 * IQR
+        upper_bound = Q3 + 1.5 * IQR
+        
+        outliers = data[(data[col] < lower_bound) | (data[col] > upper_bound)]
+        count = len(outliers)
+        percentage = (count / len(data)) * 100
+        
+        print(f"[{col}] 이상치 개수: {count}개 ({percentage:.2f}%)")
+
+print_outlier_report(raw_data, coord_cols + diff_cols + time_cols)`}/>
+          </div>
+          {/* 데이터 시각화 */}
+          <div className="mb-16">
+            <div className="flex items-center gap-4 mb-3">
+              <p className="font-base text-amber-500">Step 4</p>
+              <div className="grow border-b border-amber-500" />
+            </div>
+            <h2 className="font-extrabold text-3xl text-amber-600 mb-4">
+              데이터 시각화(일변량 데이터)
+            </h2>
+            <p className="pl-1 text-lg font-sans text-amber-950 mb-5">
+              <span className="font-semibold">수치형 데이터 (Numerical)</span><br/>
+              &nbsp;: 히스토그램, 박스 플롯, 커널 밀도 추정<br/><br/>
+              <span className="font-semibold">범주형 데이터 (Numerical)</span><br/>
+              &nbsp;: 막대 그래프, 파이 차트<br/>
+            </p>
+            <Code filename={'시각화.py'} code={`
+fig, axes = plt.subplots(2, 3, figsize=(18, 10))
+axes = axes.flatten()
+
+target_cols = ['start_x', 'start_y', 'end_x', 'end_y', 'time_seconds']
+
+for i, col in enumerate(target_cols):
+    sns.histplot(raw_data[col], kde=True, ax=axes[i], color='teal')
+    axes[i].set_title(f'Distribution of {col}')
+
+# 남는 서브플롯은 비워둠
+axes[-1].axis('off')
+plt.tight_layout()
+plt.show()
+            `}/>
+          </div>
+
+          {/* 속성 간의 관계분석 */}
+          <div className="mb-16">
+            <div className="flex items-center gap-4 mb-3">
+              <p className="font-base text-amber-500">Step 5</p>
+              <div className="grow border-b border-amber-500" />
+            </div>
+            <h2 className="font-extrabold text-3xl text-amber-600 mb-4">
+              속성 간의 관계 분석
+            </h2>
+            <p className="pl-1 text-lg font-sans text-amber-950 mb-5">
+              - 개별 속성 관찰에서 찾아내지 못했던 속성들의 조합 패턴 발견<br/>
+              - 그래프를 통해 시각화하여 속성 간의 관계 분석<br/>
+              - 상관계수를 통한 상관관계 확인
+              <br/><br/>
+              <strong>Numeric - Numeric</strong> : 상관계수(요약 통계), 산점도(시각화)<br/>
+              <strong>Numeric - Categorial</strong> : 카테고리별 통계 값, 박스 플롯<br/>
+              <strong>Categorical - Categorical</strong> : 교차 테이블, 모자이크 플롯
+            </p>
+            <Code />
+          </div>
         </div>
       </section>
     </>
