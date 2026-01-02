@@ -289,10 +289,24 @@ plt.show()
               <strong>Numeric - Categorial</strong> : 카테고리별 통계 값, 박스 플롯<br/>
               <strong>Categorical - Categorical</strong> : 교차 테이블, 모자이크 플롯
             </p>
-            <Code />
           </div>
         </div>
       </section>
+
+      {/* 데이콘 정리 */}
+          <section className="bg-white py-16 px-10">
+              <div className="max-w-5xl bg-lime-50 border border-lime-300 shadow rounded-2xl mx-auto px-10 py-16">
+                <h2 className="text-4xl font-extrabold text-lime-800 text-center mb-16">데이콘 데이터에 적용 결과</h2>
+                <ul className="list-disc list-inside text-left inline-block text-lg ml-60">
+                  <li>player_id, player_name_ko에서 null있는 행 삭제</li>
+                  <li>dx, dy 데이터 0에 분포 -&gt; 로그 스케일 적용</li>
+                  <li>홈팀 승률이 높음 -&gt; 승리에 영향 미칠 수 있으니 변수로 넣기</li><br/>
+                  <li>단순한 액션보다 점수에 득점 많이 주는 이벤트가 중요,<br/>
+                  <span className="ml-6.5"/>하지만 득점 만들기 위해선 패스같은 이벤트도 필요</li>
+                  <li>position_name, result_name null 전처리 어떻게 할건지 고민 필요</li>
+                </ul>
+              </div>
+          </section>
     </>
   );
 }
